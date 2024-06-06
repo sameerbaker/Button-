@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تكبير وتصغير الخط</title>
+    <style>
+        p {
+            font-size: 16px; /* الحجم الافتراضي للخط */
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <h2>الواجهة الأمامية</h2>
+    <p id="text">مرحبًا، أنا الواجهة الأمامية</p>
+    <button onclick="increaseFontSize()">تكبير الخط</button>
+    <button onclick="decreaseFontSize()">تصغير الخط</button>
+</div>
+
+<script>
+    function increaseFontSize() {
+        let p = document.getElementById('text');
+        let currentSize = window.getComputedStyle(p, null).getPropertyValue('font-size');
+        let newSize = parseFloat(currentSize) + 2;
+        p.style.fontSize = newSize + 'px';
+    }
+
+    function decreaseFontSize() {
+        let p = document.getElementById('text');
+        let currentSize = window.getComputedStyle(p, null).getPropertyValue('font-size');
+        let newSize = parseFloat(currentSize) - 2;
+        p.style.fontSize = newSize + 'px';
+    }
+</script>
+
+</body>
+</html>
